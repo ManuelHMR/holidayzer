@@ -26,7 +26,7 @@ app.get("/is-today-holiday", (request, response) => {
     const hoje = new Date();
     holidays.map(holiday =>{
         if(checkHoliday(hoje.toLocaleDateString())){
-            response.send("Sim, hoje é nome-do-feriado");
+            response.send(`Sim, hoje é ${holiday.name}`);
         }
         else{
             response.send(`Não, hoje não é feriado`)
